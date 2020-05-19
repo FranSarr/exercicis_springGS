@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <title>Pruebas AJAX</title>
+</head>
+<body>
+<script>
+$(function(){
+    $.ajax({
+        type: 'GET',
+        url: 'localhost:8080',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT',
+            'Access-Control-Allow-Headers': 'Content-Type'
+        }
+    })
+});
+</script>
+</body>
+</html>
