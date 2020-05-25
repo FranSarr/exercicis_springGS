@@ -2,19 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <title>Pruebas AJAX</title>
 </head>
 <body>
+
+<p>Entra un nombre: <input type="text" id="nombre" name="nombre" /></p>
+<button id="myButton">Pulsa el Botón</button>
+<div id="saludo"></div>
 <script>
 $(function(){
+    var bla = $('#nombre').val();
+    <!--    var bla ='Pepito';-->
     $.ajax({
         type: 'GET',
         url: 'http://localhost:8080',
-        headers: {
-            'Access-Control-Allow-Origin': 'http://localhost',
-            'Access-Control-Allow-Methods': 'GET, POST, PUT',
-            'Access-Control-Allow-Headers': 'Content-Type'
+        data: { name : bla},
+        success: function(respuesta) {
+        console.log('Salida de datos', respuesta);
+        $("#saludo").html(respuesta);
         }
     })
 });

@@ -14,7 +14,6 @@ public class HelloworldApplication {
     }
 
 
-
 @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
@@ -25,3 +24,4 @@ public class HelloworldApplication {
         };
     }
 }
+
