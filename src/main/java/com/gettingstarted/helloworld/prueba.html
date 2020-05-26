@@ -11,8 +11,8 @@
 <button onclick="submitMe(document.getElementById('nombre').value)" id="testButton" >Submit Response</button>
 <div id="saludo"></div>
 <script>
-function submitMe(){
-    var bla = $('#nombre').val();
+function submitMe(bla){
+<!-- var bla = $('#nombre').val(); -->
     $.ajax({
         type: 'GET',
         url: 'http://localhost:8080',
