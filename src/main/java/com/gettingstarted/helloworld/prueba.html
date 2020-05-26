@@ -8,12 +8,11 @@
 <body>
 
 <p>Entra un nombre: <input type="text" id="nombre" name="nombre" /></p>
-<button id="myButton">Pulsa el Botón</button>
+<button onclick="submitMe(document.getElementById('nombre').value)" id="testButton" >Submit Response</button>
 <div id="saludo"></div>
 <script>
-$(function(){
+function submitMe(){
     var bla = $('#nombre').val();
-    <!--    var bla ='Pepito';-->
     $.ajax({
         type: 'GET',
         url: 'http://localhost:8080',
@@ -23,7 +22,7 @@ $(function(){
         $("#saludo").html(respuesta);
         }
     })
-});
+};
 </script>
 </body>
 </html>
